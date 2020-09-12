@@ -1,10 +1,13 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
-driver = webdriver.Chrome()
+options = Options()
+options.headless = True
+driver = webdriver.Chrome(options=options)
 driver.get("https://scu.az1.qualtrics.com/jfe/form/SV_0qc6GjIXqzBoom1")
 
 name = ''
