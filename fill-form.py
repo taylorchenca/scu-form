@@ -12,9 +12,9 @@ options.headless = True
 driver = webdriver.Chrome(options=options)
 driver.get("https://scu.az1.qualtrics.com/jfe/form/SV_0qc6GjIXqzBoom1")
 
-name = 'Haoyao Chen'
-email = 'hchen7@scu.edu'
-phone = '9492932620'
+name = ''
+email = ''
+phone = ''
 wait = WebDriverWait(driver, 10)
 
 logger.info("Begin SCU form for " + name)
