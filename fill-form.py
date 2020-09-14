@@ -1,3 +1,4 @@
+import logging
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -5,15 +6,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
+logger = logging.getLogger('scu-form')
 options = Options()
 options.headless = True
 driver = webdriver.Chrome(options=options)
 driver.get("https://scu.az1.qualtrics.com/jfe/form/SV_0qc6GjIXqzBoom1")
 
-name = ''
-email = ''
-phone = ''
+name = 'Haoyao Chen'
+email = 'hchen7@scu.edu'
+phone = '9492932620'
 wait = WebDriverWait(driver, 10)
+
+logger.info("Begin SCU form for " + name)
 
 wait.until(expected_conditions.element_to_be_clickable((By.ID, "QID14-1-label"))).click()  # Click on "Student"
 wait.until(expected_conditions.element_to_be_clickable((By.ID, "NextButton"))).click()  # Click on "Next"
